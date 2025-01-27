@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2wacm2cbuaxi"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_3lgf1"]
+[ext_resource type="PackedScene" uid="uid://bllke6nby7koo" path="res://scenes/tilemaps.tscn" id="1_uvjg0"]
+[ext_resource type="PackedScene" uid="uid://copmddbeoxptn" path="res://scenes/player.tscn" id="3_506sy"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_3lgf1")
+
+[node name="TileMaps" parent="." instance=ExtResource("1_uvjg0")]
+
+[node name="Player" parent="TileMaps" instance=ExtResource("3_506sy")]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(0.1, 0.1)
+
+[node name="Camera2D" type="Camera2D" parent="TileMaps"]
+zoom = Vector2(5, 5)
